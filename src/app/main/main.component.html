@@ -2,6 +2,13 @@
   Выйти
 </button>
 
-<ul *ngFor="let friend of (vkApiService.friends | async)">
-  <app-friend [friendData]="friend"></app-friend>
+<ul *ngFor="let friend of friends">
+  <li>
+    <app-friend [friendData]="friend"></app-friend>
+  </li>
 </ul>
+<div class="sad-message" *ngIf="friends">
+  <span *ngIf="friends.length === 0">У вас нет друзей :(</span>
+</div>
+
+<app-loader *ngIf="!friends"></app-loader>

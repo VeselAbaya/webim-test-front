@@ -1,4 +1,5 @@
 import { Component, Input } from '@angular/core';
+
 import { IFriend } from '../../services/friend.interface';
 
 @Component({

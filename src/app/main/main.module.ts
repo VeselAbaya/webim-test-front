@@ -1,7 +1,10 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { MainComponent } from './main.component';
 import { RouterModule } from '@angular/router';
+
+import { AppSharedModule } from '../shared/app-shared.module';
+
+import { MainComponent } from './main.component';
 import { FriendComponent } from './friend/friend.component';
 
 @NgModule({
@@ -13,7 +16,9 @@ import { FriendComponent } from './friend/friend.component';
     CommonModule,
     RouterModule.forChild([
       {path: 'main', component: MainComponent}
-    ])
+    ]),
+
+    AppSharedModule
   ],
   exports: [
     RouterModule

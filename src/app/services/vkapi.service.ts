@@ -1,9 +1,11 @@
-import { Injectable } from '@angular/core';
-import { Observable, of, throwError } from 'rxjs';
-import { IFriend } from './friend.interface';
 import { HttpClient } from '@angular/common/http';
+import { Injectable } from '@angular/core';
+
+import { Observable, of, throwError } from 'rxjs';
 import { first, map, tap } from 'rxjs/operators';
+
 import { environment } from '../../environments/environment';
+import { IFriend } from './friend.interface';
 
 @Injectable()
 export class VKapiService {
@@ -14,12 +16,12 @@ export class VKapiService {
 
   set userId(id: string) {
     if (id !== 'undefined') {
-      localStorage.setItem('webim-test-vkId', id);
+      localStorage.setItem('webim-test-id', id);
     }
   }
 
   get userId(): string | null {
-    return localStorage.getItem('webim-test-vkId');
+    return localStorage.getItem('webim-test-id');
   }
 
   get friends(): Observable<IFriend[]> {
@@ -53,7 +55,7 @@ export class VKapiService {
   logout() {
     const url = `${environment.backendURL}/VKlogout/${this.userId}`;
 
-    localStorage.removeItem('webim-test-vkId');
+    localStorage.removeItem('webim-test-id');
     this._friends = null;
 
     return this.httpClient.delete(url);
