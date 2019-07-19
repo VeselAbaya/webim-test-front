@@ -1,3 +1,4 @@
 export const environment = {
-  production: true
+  production: true,
+  backendURL: 'https://antay-webim-test-server.herokuapp.com/'
 };
