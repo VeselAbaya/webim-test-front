@@ -8,7 +8,7 @@ import { VKapiService } from '../services/vkapi.service';
 })
 export class AuthComponent implements OnInit {
   constructor(private router: Router,
-              private vkApiService: VKapiService) {}
+              public vkApiService: VKapiService) {}
 
   ngOnInit() {
     // if user is already authenticated here will be success response

@@ -3,9 +3,11 @@ import { Observable, of } from 'rxjs';
 import { IFriend } from './friend.interface';
 import { HttpClient } from '@angular/common/http';
 import { map, tap } from 'rxjs/operators';
+import { environment } from '../../environments/environment';
 
 @Injectable()
 export class VKapiService {
+  public REDIRECT_URI = environment.backendURL;
   private _friends: IFriend[];
 
   constructor(private httpClient: HttpClient) {}
