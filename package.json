@@ -16,11 +16,12 @@
     "npm": "6.9.0"
   },
   "dependencies": {
+    "@angular-devkit/build-angular": "^0.801.2",
     "@angular/animations": "^6.1.0",
     "@angular/cli": "^8.1.2",
-    "@angular/compiler-cli": "^8.1.2",
     "@angular/common": "^6.1.0",
     "@angular/compiler": "^6.1.0",
+    "@angular/compiler-cli": "^8.1.2",
     "@angular/core": "^6.1.0",
     "@angular/forms": "^6.1.0",
     "@angular/http": "^6.1.0",
@@ -31,11 +32,10 @@
     "express": "^4.17.1",
     "path": "^0.12.7",
     "rxjs": "~6.2.0",
-    "zone.js": "~0.8.26",
-    "typescript": "^3.4.5"
+    "typescript": "^3.4.5",
+    "zone.js": "~0.8.26"
   },
   "devDependencies": {
-    "@angular-devkit/build-angular": "~0.8.0",
     "@angular/cli": "^8.1.2",
     "@angular/compiler-cli": "^8.1.2",
     "@angular/language-service": "^6.1.0",
