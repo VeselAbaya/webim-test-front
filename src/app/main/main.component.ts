@@ -14,8 +14,8 @@ export class MainComponent implements OnInit {
 
   ngOnInit() {
     const queryParamMap = this.activatedRoute.snapshot.queryParamMap;
-    if (queryParamMap.has('vkId') && !localStorage.getItem('webim-test-vkId')) {
-      localStorage.setItem('webim-test-vkId', queryParamMap.get('vkId'));
+    if (queryParamMap.has('vkId') && !this.vkApiService.userId) {
+      this.vkApiService.userId = queryParamMap.get('vkId');
     }
   }
 

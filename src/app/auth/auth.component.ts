@@ -12,10 +12,8 @@ export class AuthComponent implements OnInit {
 
   ngOnInit() {
     // if user is already authenticated here will be success response
-    if (localStorage.getItem('webim-test-vkId')) {
-      this.vkApiService.friends.subscribe(() =>  {
-        this.router.navigate(['/main']);
-      });
-    }
+    this.vkApiService.friends.subscribe(() => {
+      this.router.navigate(['/main']);
+    });
   }
 }
