@@ -1,0 +1,29 @@
+.friend__link {
+  display: flex;
+  min-width: 300px;
+  padding: 5px;
+
+  border-radius: 3px;
+
+  background-color: whitesmoke;
+
+  text-decoration: none;
+}
+
+.friend__photo {
+  margin-right: 10px;
+}
+
+.friend__details {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+.friend__name {
+  font-size: 18px;
+}
+
+.friend__online {
+  color: #939393;
+}

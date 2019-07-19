@@ -1,0 +1,7 @@
+<button class="button" (click)="onLogout()">
+  Выйти
+</button>
+
+<ul *ngFor="let friend of (vkApiService.friends | async)">
+  <app-friend [friendData]="friend"></app-friend>
+</ul>

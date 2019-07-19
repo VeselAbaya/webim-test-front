@@ -1,0 +1,10 @@
+<a class="friend__link" href="https://vk.com/id{{friendData.id}}">
+  <img class="friend__photo"
+       [src]="friendData.photo"
+       alt="{{friendData.name}} - аватар"
+       width="50" height="50">
+  <div class="friend__details">
+    <span class="friend__name">{{friendData.name}}</span>
+    <span class="friend__online">{{friendData.online ? 'online' : 'offline'}}</span>
+  </div>
+</a>

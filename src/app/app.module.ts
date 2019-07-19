@@ -1,16 +1,28 @@
-import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { BrowserModule } from '@angular/platform-browser';
+import { RouterModule } from '@angular/router';
+
+import { MainModule } from './main/main.module';
+import { AuthModule } from './auth/auth.module';
+
+import { VKapiService } from './services/vkapi.service';
 
 import { AppComponent } from './app.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
-  declarations: [
-    AppComponent
-  ],
+  declarations: [AppComponent],
   imports: [
-    BrowserModule
+    BrowserModule,
+    HttpClientModule,
+    RouterModule.forRoot([
+      {path: '', redirectTo: 'auth', pathMatch: 'full'}
+    ]),
+
+    AuthModule,
+    MainModule
   ],
-  providers: [],
+  providers: [VKapiService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
