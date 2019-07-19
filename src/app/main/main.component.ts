@@ -10,7 +10,7 @@ import { VKapiService } from '../services/vkapi.service';
 export class MainComponent implements OnInit {
   constructor(private activatedRoute: ActivatedRoute,
               private router: Router,
-              private vkApiService: VKapiService) {}
+              public vkApiService: VKapiService) {}
 
   ngOnInit() {
     const queryParamMap = this.activatedRoute.snapshot.queryParamMap;
