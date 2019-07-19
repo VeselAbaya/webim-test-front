@@ -18,7 +18,7 @@ export class VKapiService {
     }
 
     const vkId = localStorage.getItem('webim-test-vkId');
-    const url = `http://localhost:3800/VKgetfriends/${vkId}`;
+    const url = `${environment.backendURL}/VKgetfriends/${vkId}`;
 
     return this.httpClient.get<any[]>(url).pipe(
       map(friends => {
@@ -39,7 +39,7 @@ export class VKapiService {
 
   logout() {
     const vkId = localStorage.getItem('webim-test-vkId');
-    const url = `http://localhost:3800/VKlogout/${vkId}`;
+    const url = `${environment.backendURL}/VKlogout/${vkId}`;
 
     localStorage.removeItem('webim-test-vkId');
     this._friends = null;
