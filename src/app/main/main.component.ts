@@ -10,7 +10,7 @@ import { IFriend } from '../services/friend.interface';
   styleUrls: ['./main.component.css']
 })
 export class MainComponent implements OnInit {
-  private friends: IFriend[] = null;
+  public friends: IFriend[] = null;
 
   constructor(private activatedRoute: ActivatedRoute,
               private router: Router,
