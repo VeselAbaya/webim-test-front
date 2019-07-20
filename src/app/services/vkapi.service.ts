@@ -14,10 +14,13 @@ export class VKapiService {
 
   constructor(private httpClient: HttpClient) {}
 
-  set userId(id: string) {
-    if (id !== 'undefined') {
-      localStorage.setItem('webim-test-id', id);
+  set userId(id: string | null) {
+    if (!id) {
+      localStorage.removeItem('webim-test-id');
+      return;
     }
+
+    localStorage.setItem('webim-test-id', id);
   }
 
   get userId(): string | null {
@@ -55,7 +58,7 @@ export class VKapiService {
   logout() {
     const url = `${environment.backendURL}/VKlogout/${this.userId}`;
 
-    localStorage.removeItem('webim-test-id');
+    this.userId = null;
     this._friends = null;
 
     return this.httpClient.delete(url);

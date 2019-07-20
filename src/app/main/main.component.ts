@@ -17,11 +17,6 @@ export class MainComponent implements OnInit {
               public vkApiService: VKapiService) {}
 
   ngOnInit() {
-    const queryParamMap = this.activatedRoute.snapshot.queryParamMap;
-    if (queryParamMap.has('_id') && !this.vkApiService.userId) {
-      this.vkApiService.userId = queryParamMap.get('_id');
-    }
-
     this.vkApiService.friends.subscribe(friends => {
       this.friends = friends;
     });

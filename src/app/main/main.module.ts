@@ -6,16 +6,18 @@ import { AppSharedModule } from '../shared/app-shared.module';
 
 import { MainComponent } from './main.component';
 import { FriendComponent } from './friend/friend.component';
+import { AuthGuard } from './auth.guard';
 
 @NgModule({
   declarations: [
     MainComponent,
     FriendComponent
   ],
+  providers: [AuthGuard],
   imports: [
     CommonModule,
     RouterModule.forChild([
-      {path: 'main', component: MainComponent}
+      {path: 'main', component: MainComponent, canActivate: [AuthGuard]}
     ]),
 
     AppSharedModule
